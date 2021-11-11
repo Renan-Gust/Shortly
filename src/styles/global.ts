@@ -29,10 +29,10 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     @media(min-width: 320px){
-        padding: 32px 40px;
+        padding: 32px 20px;
     }
 
     @media(min-width: 768px){
-        padding: 32px 80px;
+        padding: 32px 120px;
     }
 `;
