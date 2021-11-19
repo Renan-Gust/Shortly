@@ -30,7 +30,7 @@ export function Header() {
                 </C.Nav>
             </C.Header>
 
-        <HeaderMobile />
+            {/* <HeaderMobile /> */}
         </>
     )
 }

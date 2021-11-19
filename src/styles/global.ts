@@ -23,9 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Container = styled.div`
-    height: 100vh;
-`;
+export const Container = styled.div``;
 
 export const Content = styled.div`
     @media(min-width: 320px){
@@ -35,4 +33,8 @@ export const Content = styled.div`
     @media(min-width: 768px){
         padding: 32px 120px;
     }
+`;
+
+export const WrapperAdvancedStatistics = styled.div`
+    background: ${props => props.theme.colors.Gray};
 `;
