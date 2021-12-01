@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Poppins';
-        src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+        src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
     }
 
     *{

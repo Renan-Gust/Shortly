@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     position: relative;
+    margin-bottom: 116px;
 `;
 
 export const Main = styled.main`
