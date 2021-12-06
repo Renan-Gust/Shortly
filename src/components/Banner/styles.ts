@@ -39,6 +39,8 @@ export const Section = styled.section`
 
     h1{
         color: ${props => props.theme.colors.VeryDarkBlue};
+        font-weight: 900;
+        line-height: 56px;
 
         @media(min-width: 320px){
             font-size: 2.5rem;
@@ -46,7 +48,7 @@ export const Section = styled.section`
         }
 
         @media(min-width: 1100px){
-            font-size: 4rem;
+            font-size: 3.3rem;
         }
     }
 

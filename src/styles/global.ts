@@ -36,5 +36,6 @@ export const Content = styled.div`
 `;
 
 export const WrapperAdvancedStatistics = styled.div`
-    background: ${props => props.theme.colors.Gray};
+    /* background: ${props => props.theme.colors.Gray}; */
+    background-color: #eeeeee;
 `;

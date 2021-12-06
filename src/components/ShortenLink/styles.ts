@@ -26,7 +26,7 @@ export const Container = styled.div`
     }
 
     @media(min-width: 1340px){
-        width: 50%;
+        width: 86%;
     }
 `;
 
