@@ -25,7 +25,7 @@ export const Container = styled.div`
         background-size: cover;
     }
 
-    @media(min-width: 1340px){
+    @media(min-width: 1420px){
         width: 86%;
     }
 `;

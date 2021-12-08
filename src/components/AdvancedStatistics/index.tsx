@@ -25,6 +25,8 @@ export function AdvancedStatistics() {
                         </C.Content>
                     </C.Article>
 
+                    <C.Div></C.Div>
+
                     <C.Article className="detailedRecordsMargin">
                         <C.Content>
                             <C.Figure>
@@ -37,6 +39,8 @@ export function AdvancedStatistics() {
                             <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps informe better decisions.</p>
                         </C.Content>
                     </C.Article>
+
+                    <C.Div></C.Div>
 
                     <C.Article className="fullyCustomizableMargin">
                         <C.Content>
