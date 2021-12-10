@@ -39,3 +39,21 @@ export const WrapperAdvancedStatistics = styled.div`
     /* background: ${props => props.theme.colors.Gray}; */
     background-color: #eeeeee;
 `;
+
+export const WrapperBoost = styled.div`
+    background-color: ${props => props.theme.colors.DarkViolet};
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @media(min-width: 320px){
+        background-image: url('/bg-boost-mobile.svg');
+    }
+
+    @media(min-width: 900px){
+        background-image: url('/bg-boost-desktop.svg');
+    }
+`;
+
+export const WrapperFooter = styled.div`
+    background-color: ${props => props.theme.colors.VeryDarkViolet};
+`;
