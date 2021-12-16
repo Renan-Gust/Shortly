@@ -14,7 +14,7 @@ export const Main = styled.main`
     }
 
     @media(min-width: 1420px){
-        width: 86%;
+        width: 79%;
     }
 `;
 
@@ -48,7 +48,7 @@ export const Section = styled.section`
 
     @media(min-width: 1240px) {
         flex-direction: row;
-        margin-top: 64px;
+        margin-top: 56px;
 
         .detailedRecordsMargin{
             margin-top: 60px;
