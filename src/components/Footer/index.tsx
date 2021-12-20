@@ -43,20 +43,20 @@ export function Footer() {
                         </ul>
                     </C.Section>
 
-                    <C.Section>
+                    <C.Networks>
                         <a href="">
-                            <img src="/icon-facebook.svg" alt="facebook" />
+                            <i className="fab fa-facebook-square"></i>
                         </a>
                         <a href="">
-                            <img src="/icon-twitter.svg" alt="twitter" />
+                            <i className="fab fa-twitter"></i>
                         </a>
                         <a href="">
-                            <img src="/icon-pinterest.svg" alt="pinterest" />
+                            <i className="fab fa-pinterest"></i>
                         </a>
                         <a href="">
-                            <img src="/icon-instagram.svg" alt="instagram" />
+                            <i className="fab fa-instagram"></i>
                         </a>
-                    </C.Section>
+                    </C.Networks>
                 </C.Main>
             </C.Nav>
         </C.Container>

@@ -20,6 +20,10 @@ export const Nav = styled.nav`
         flex-direction: column;
         align-items: center;
     }
+
+    @media(min-width: 1070px){
+        flex-direction: row;
+    }
 `;
 
 export const Main = styled.main`
@@ -29,7 +33,11 @@ export const Main = styled.main`
 
     @media(min-width: 320px){
         flex-direction: column;
-        gap: 40px;
+    }
+
+    @media(min-width: 768px){
+        flex-direction: row;
+        width: 100%;
     }
 `;
 
@@ -41,7 +49,13 @@ export const Section = styled.section`
     width: 100%;
 
     @media(min-width: 320px){
+        margin-top: 40px;
         text-align: center;
+    }
+
+    @media(min-width: 768px){
+        width: initial;
+        text-align: start;
     }
 
     h4{
@@ -56,17 +70,31 @@ export const Section = styled.section`
         flex-direction: column;
         gap: 16px;
     }
-
-    a{
-        display: inline-block;
-        margin-right: 24px;
-    }
 `;
 
 export const Networks = styled.section`
     a{
         display: inline-block;
+
+        i{
+            color: ${props => props.theme.colors.White};
+            font-size: 1.7rem;
+
+            &:hover{
+                transition: all 0.3s ease;
+                color: ${props => props.theme.colors.Cyan};
+            }
+        }
+    }
+
+    a:nth-child(1),
+    a:nth-child(2),
+    a:nth-child(3) {
         margin-right: 24px;
+    }
+
+    @media(min-width: 320px){
+        margin-top: 40px;
     }
 `;
 

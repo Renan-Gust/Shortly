@@ -16,7 +16,7 @@ export const Container = styled.div`
             font-size: 1.7rem;
         }
 
-        @media(min-width: 320px) {
+        @media(min-width: 768px) {
             font-size: 2rem;
         }
     }
