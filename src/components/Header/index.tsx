@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import * as C from './styles/styles'
 import * as M from './styles/mobile'
 
@@ -5,12 +7,24 @@ import { Button } from '../Button'
 import { theme } from '../../styles/Colors'
 
 export function Header() {
+    const [isActivated, setIsActivated] = useState(false)
+
+    function handleOpenMenu(){
+        setIsActivated(!isActivated)
+    }
+
     return(
         <>
             <C.Header>
                 <C.Figure>
                     <img src="/logo.svg" alt="logo" />
                 </C.Figure>
+
+                <C.Menu onClick={handleOpenMenu} openMenu={isActivated}>
+                    <div id="bar1" className="bar"></div>
+                    <div id="bar2" className="bar"></div>
+                    <div id="bar3" className="bar"></div>
+                </C.Menu>
 
                 <C.Nav>
                     <ul>
@@ -30,14 +44,14 @@ export function Header() {
                 </C.Nav>
             </C.Header>
 
-            {/* <HeaderMobile /> */}
+            <HeaderMobile isActivated={isActivated} />
         </>
     )
 }
 
-function HeaderMobile() {
+function HeaderMobile({ isActivated }: any) {  
     return(
-        <M.Nav>
+        <M.Nav openMenu={isActivated}>
             <M.Main>
                 <ul>
                     <li>

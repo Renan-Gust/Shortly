@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ openMenu: boolean }>`
     height: 360px;
     background: ${props => props.theme.colors.DarkViolet};
     border-radius: 10px;
@@ -8,6 +8,14 @@ export const Nav = styled.nav`
     position: absolute;
     width: 100%;
     top: 90px;
+
+    @media(min-width: 320px){
+        display: ${props => props.openMenu ? 'block' : 'none'};
+    }
+
+    @media(min-width: 1024px){
+        display: none;
+    }
 `;
 
 export const Main = styled.main`
