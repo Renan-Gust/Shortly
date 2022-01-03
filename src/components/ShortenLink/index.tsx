@@ -2,29 +2,50 @@ import { useEffect, useState, FormEvent } from 'react'
 import * as C from './styles'
 
 type linkGenerated = {
-
+    originalLink: string;
+    fullShortLink: string;
 }
 
 export function ShortenLink() {
-    const [link, setLink] = useState('')
+    const [link, setLink] = useState('https://www.mtrek.com.br')
     const [isEmpty, setIsEmpty] = useState(false)
-    const [linkGenerated, setLinkGenerated] = useState<linkGenerated>({})
+    const [linkGenerated, setLinkGenerated] = useState<linkGenerated[]>([])
 
-    useEffect(() => {
-        (async () => {
-            const request = await fetch(`https://api.shrtco.de/v2/shorten?url=https://www.mtrek.com.br`)
-            const { ok, result } = await request.json()
-            console.log(ok, result)
-        })()
-    }, [])
+    async function teste(){
+        const request = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`)
+        const { ok, result } = await request.json()
+        
+        if(ok){
+            // setLinkGenerated([
+            //     {
+            //         originalLink: result.original_link,
+            //         fullShortLink: result.full_short_link
+            //     }
+            // ])
+            addNewLink(result)
+        }
+    }
 
-
-    function handleSubmit(e: FormEvent) {
+    async function handleSubmit(e: FormEvent,) {
         e.preventDefault()
 
-        if(link === '') {
-            setIsEmpty(true)
-        }
+        if(link === '') setIsEmpty(true)
+
+        teste()
+    }
+
+    function addNewLink(result: any) {
+        const newLinkGenerated = [
+            ...linkGenerated,
+            {
+                originalLink: result.original_link,
+                fullShortLink: result.full_short_link
+            }
+        ]
+
+        setLinkGenerated(newLinkGenerated)
+
+        console.log(newLinkGenerated)
     }
 
     useEffect(() => {
