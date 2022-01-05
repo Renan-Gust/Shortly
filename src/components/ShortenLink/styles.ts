@@ -1,18 +1,28 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-    background-color: ${props => props.theme.colors.DarkViolet};
-    background-repeat: no-repeat;
-
-    padding: 32px 32px 26px 32px;
+export const Wrapper = styled.div`
     margin: 0 auto;
-
-    border-radius: 8px;
-
     position: relative;
 
     @media(min-width: 320px){
         width: 100%;
+    }
+
+    @media(min-width: 1420px){
+        width: 79%;
+    }
+`;
+
+export const Container = styled.div`
+    background-color: ${props => props.theme.colors.DarkViolet};
+    background-repeat: no-repeat;
+
+    width: 100%;
+    padding: 32px 32px 26px 32px;
+    border-radius: 8px;
+    position: absolute;
+
+    @media(min-width: 320px){
         bottom: 116px;
 
         background-image: url('/bg-shorten-mobile.svg');
@@ -20,13 +30,9 @@ export const Container = styled.div`
     }
 
     @media(min-width: 900px){
-        bottom: 87px;
+        bottom: 46px;
         background-image: url('/bg-shorten-desktop.svg');
         background-size: cover;
-    }
-
-    @media(min-width: 1420px){
-        width: 79%;
     }
 `;
 

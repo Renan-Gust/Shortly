@@ -1,7 +1,11 @@
 import { useEffect, useState, FormEvent } from 'react'
+
 import * as C from './styles'
 
-type linkGenerated = {
+import { api } from '../../services/api'
+import { ShowGeneratedLink } from '../ShowGeneratedLink'
+
+type GeneratedLink = {
     originalLink: string;
     fullShortLink: string;
 }
@@ -9,43 +13,31 @@ type linkGenerated = {
 export function ShortenLink() {
     const [link, setLink] = useState('https://www.mtrek.com.br')
     const [isEmpty, setIsEmpty] = useState(false)
-    const [linkGenerated, setLinkGenerated] = useState<linkGenerated[]>([])
+    const [generatedLink, setGeneratedLink] = useState<GeneratedLink[]>([])
 
-    async function teste(){
-        const request = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`)
-        const { ok, result } = await request.json()
-        
-        if(ok){
-            // setLinkGenerated([
-            //     {
-            //         originalLink: result.original_link,
-            //         fullShortLink: result.full_short_link
-            //     }
-            // ])
-            addNewLink(result)
-        }
+    async function generatedLinkFunction(){
+        const { ok, result } = await api.GenerateLink(link)
+        if(ok) addNewLink(result)
     }
 
     async function handleSubmit(e: FormEvent,) {
         e.preventDefault()
-
         if(link === '') setIsEmpty(true)
 
-        teste()
+        generatedLinkFunction()
     }
 
     function addNewLink(result: any) {
-        const newLinkGenerated = [
-            ...linkGenerated,
+        const newGeneratedLink = [
+            ...generatedLink,
             {
                 originalLink: result.original_link,
                 fullShortLink: result.full_short_link
             }
         ]
 
-        setLinkGenerated(newLinkGenerated)
-
-        console.log(newLinkGenerated)
+        setGeneratedLink(newGeneratedLink)
+        console.log(newGeneratedLink)
     }
 
     useEffect(() => {
@@ -53,22 +45,26 @@ export function ShortenLink() {
     }, [link])
 
     return(
-        <C.Container>
-            <C.Form onSubmit={handleSubmit}>
-                <C.Area>
-                    <C.TextInput
-                        type="url"
-                        placeholder="Shorten a link here..." 
-                        value={link}
-                        onChange={e => setLink(e.target.value)}
-                        empty={isEmpty}
-                    />
-                    
-                    { isEmpty ? <C.Warning>Please add a link</C.Warning> : '' }
-                </C.Area>
+        <C.Wrapper>
+            <C.Container>
+                <C.Form onSubmit={handleSubmit}>
+                    <C.Area>
+                        <C.TextInput
+                            type="url"
+                            placeholder="Shorten a link here..." 
+                            value={link}
+                            onChange={e => setLink(e.target.value)}
+                            empty={isEmpty}
+                        />
+                        
+                        { isEmpty ? <C.Warning>Please add a link</C.Warning> : '' }
+                    </C.Area>
 
-                <C.SubmitInput type="submit" value="Shorten It!" />
-            </C.Form>
-        </C.Container>
+                    <C.SubmitInput type="submit" value="Shorten It!" />
+                </C.Form>
+            </C.Container>
+
+            <ShowGeneratedLink />
+        </C.Wrapper>
     )
 }
