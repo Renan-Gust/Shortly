@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
         width: 100%;
     }
 
+    @media(min-width: 900px){
+        bottom: 88px;
+    }
+
     @media(min-width: 1420px){
         width: 79%;
     }
@@ -20,17 +24,13 @@ export const Container = styled.div`
     width: 100%;
     padding: 32px 32px 26px 32px;
     border-radius: 8px;
-    position: absolute;
 
     @media(min-width: 320px){
-        bottom: 116px;
-
         background-image: url('/bg-shorten-mobile.svg');
         background-size: 100% 100%;
     }
 
     @media(min-width: 900px){
-        bottom: 46px;
         background-image: url('/bg-shorten-desktop.svg');
         background-size: cover;
     }

@@ -1,18 +1,30 @@
 import * as C from './styles'
 
-export const ShowGeneratedLink = () => {
-    return(
-        <C.Container className="kkk">
-            <C.GeneratedLinkWrapper>
-                <C.Content>
-                    <p>https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G</p>
+import { GeneratedLink } from '../../Types/generatedLink'
 
-                    <C.GeneratedLink>
-                        <p>https://shrtco.de/jB4RWD</p>
-                        <button>Copy</button>
-                    </C.GeneratedLink>
-                </C.Content>
-            </C.GeneratedLinkWrapper>
+type ShowGeneratedLinkProps = {
+    showGeneratedLink: GeneratedLink[];
+}
+
+export const ShowGeneratedLink = ({ showGeneratedLink }: ShowGeneratedLinkProps) => {
+    return(
+        <C.Container className="ShowGeneratedLink">
+            {showGeneratedLink.map((item, index) => (
+                <C.GeneratedLinkWrapper key={index}>
+                    <C.Content>
+                        <a href={item.originalLink} target="_blank">
+                            {item.originalLink}
+                        </a>
+            
+                        <C.GeneratedLink>
+                            <a href={item.fullShortLink} target="_blank">
+                                {item.fullShortLink}
+                            </a>
+                            <button>Copy</button>
+                        </C.GeneratedLink>
+                    </C.Content>
+                </C.GeneratedLinkWrapper>
+            ))}
         </C.Container>
     )
 }

@@ -1,10 +1,21 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    top: 38px;
     position: relative;
+    bottom: 70px;
+    margin: 0 auto 70px;
 
-    margin-bottom: 140px;
+    > div:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    @media(min-width: 320px){
+        width: 100%;
+    }
+
+    @media(min-width: 1420px){
+        width: 79%;
+    }
 `;
 
 export const GeneratedLinkWrapper = styled.div`
@@ -18,7 +29,8 @@ export const Content = styled.div`
     align-items: center;
     padding: 14px 22px;
 
-    p{
+    a{
+        color: ${props => props.theme.colors.VeryDarkViolet};
         font-weight: 500;
     }
 `;
@@ -28,7 +40,7 @@ export const GeneratedLink = styled.div`
     align-items: center;
     gap: 18px;
 
-    p{
+    a{
         color: ${props => props.theme.colors.Cyan};
         font-weight: 600;
     }

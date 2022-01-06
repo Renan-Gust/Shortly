@@ -3,7 +3,7 @@ import * as C from './styles'
 
 export function AdvancedStatistics() {
     return(
-        <C.Container>
+        <C.Container className="AdvancedStatistics">
             <ShortenLink />
             <C.Main>
                 <C.SectionTitle>
