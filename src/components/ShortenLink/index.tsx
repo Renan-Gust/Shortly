@@ -7,26 +7,15 @@ import { ShowGeneratedLink } from '../ShowGeneratedLink'
 import { GeneratedLink } from '../../Types/generatedLink'
 
 export function ShortenLink() {
-    const [link, setLink] = useState('https://www.mtrek.com.br')
+    const [link, setLink] = useState('')
     const [isEmpty, setIsEmpty] = useState(false)
-    // const [generatedLink, setGeneratedLink] = useState<GeneratedLink[]>([])
-    const [generatedLink, setGeneratedLink] = useState([
-        {
-            originalLink: "https://www.mtrek.com.br",
-            fullShortLink: "https://www.mtrek.com.br"
-        },
-        {
-            originalLink: "https://www.mtrek.com.br",
-            fullShortLink: "https://www.mtrek.com.br"
-        },
-        {
-            originalLink: "https://www.mtrek.com.br",
-            fullShortLink: "https://www.mtrek.com.br"
-        }
-    ])
+    const [loading, setLoading] = useState(false)
+    const [generatedLink, setGeneratedLink] = useState<GeneratedLink[]>([])
 
     async function generatedLinkFunction(){
+        setLoading(true)
         const { ok, result } = await api.GenerateLink(link)
+        setLoading(false)
         if(ok) addNewLink(result)
     }
 
@@ -34,7 +23,8 @@ export function ShortenLink() {
         e.preventDefault()
         if(link === '') setIsEmpty(true)
 
-        // generatedLinkFunction()
+        generatedLinkFunction()
+        setLink('')
     }
 
     function addNewLink(result: any) {
@@ -68,6 +58,7 @@ export function ShortenLink() {
                             />
                             
                             { isEmpty ? <C.Warning>Please add a link</C.Warning> : '' }
+                            { loading ? "Carregando" : '' }
                         </C.Area>
 
                         <C.SubmitInput type="submit" value="Shorten It!" />
