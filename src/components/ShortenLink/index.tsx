@@ -57,8 +57,8 @@ export function ShortenLink() {
                                 empty={isEmpty}
                             />
                             
-                            { isEmpty ? <C.Warning>Please add a link</C.Warning> : '' }
-                            { loading ? "Carregando" : '' }
+                            { isEmpty && <C.Warning>Please add a link</C.Warning> }
+                            { loading && <C.Loading>Carregando...</C.Loading> }
                         </C.Area>
 
                         <C.SubmitInput type="submit" value="Shorten It!" />

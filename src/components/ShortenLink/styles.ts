@@ -117,3 +117,18 @@ export const Warning = styled.span`
     display: inline-block;
     margin-top: 8px;
 `;
+
+export const Loading = styled.span`
+    color: ${props => props.theme.colors.Cyan};
+
+    display: inline-block;
+    margin-top: 8px;
+
+    animation: blinker 0.7s ease-in-out infinite alternate;
+
+    @keyframes blinker {
+        to { 
+            opacity: 0; 
+        }
+    }
+`;
