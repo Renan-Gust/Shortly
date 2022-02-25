@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/Renan-Gust/Shortly
+$ git clone https://github.com/Renan-Gust/Shortly.git
 $ cd Shortly
 ```
 
