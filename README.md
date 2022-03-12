@@ -11,7 +11,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="dowhile2021" src="https://i.ibb.co/7RkSrCV/Shortly.png" alt="Shortly" />
+    <img src="https://i.ibb.co/7RkSrCV/Shortly.png" alt="Shortly" />
 </h1>
 
 <br>
@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/Renan-Gust/Shortly.git
+$ git clone git@github.com:Renan-Gust/Shortly.git
 $ cd Shortly
 ```
 
